@@ -18,7 +18,7 @@
         <img class="backImg" src="images/backImg.jpg" alt="">
       </div>
     </div>
-    <div class="forms">
+    <div class="forms" id="form-id">
         <div class="form-content">
           <div class="login-form">
             <div class="title">Login</div>
@@ -26,21 +26,25 @@
             <div class="input-boxes">
               <div class="input-box">
                 <i class="fas fa-envelope"></i>
-                <input type="text" placeholder="Enter your email" required>
+                <input type="text" id="email" placeholder="Enter your email" required>
+              </div>
+              <div class="input-box">
+                <i class="fas fa-phone"></i>
+                <input type="text" id="sdt" placeholder="Enter your phone number" required>
               </div>
               <div class="input-box">
                 <i class="fas fa-lock"></i>
-                <input type="password" placeholder="Enter your password" required>
+                <input type="password" id="password" placeholder="Enter your password" required>
               </div>
               <div class="text"><a href="#">Forgot password?</a></div>
               <div class="button input-box">
-                <input type="submit" value="Sumbit">
+                <input type="submit" value="Sumbit" id="login-btn">
               </div>
               <div class="text sign-up-text">Don't have an account? <label for="flip">Sigup now</label></div>
             </div>
         </form>
       </div>
-        <div class="signup-form">
+        <div class="signup-form" id="form-id">
           <div class="title">Signup</div>
         <form action="#">
             <div class="input-boxes">
@@ -50,14 +54,14 @@
               </div>
               <div class="input-box">
                 <i class="fas fa-envelope"></i>
-                <input type="text" placeholder="Enter your email" required>
+                <input type="text" id="email" placeholder="Enter your email" required>
               </div>
               <div class="input-box">
                 <i class="fas fa-lock"></i>
-                <input type="password" placeholder="Enter your password" required>
+                <input type="password" id="password" placeholder="Enter your password" required>
               </div>
               <div class="button input-box">
-                <input type="submit" value="Sumbit">
+                <input type="submit" value="Sumbit" id="login-btn">
               </div>
               <div class="text sign-up-text">Already have an account? <label for="flip">Login now</label></div>
             </div>
@@ -67,4 +71,39 @@
     </div>
   </div>
 </body>
+<script>
+  document.getElementById("login-btn").addEventListener("click", function(event) {
+    event.preventDefault(); 
+
+    let email = document.getElementById("email").value.trim();
+    let sdt = document.getElementById("sdt").value.trim();
+    let password = document.getElementById("password").value.trim();
+    let errorText = document.querySelector(".text-error");
+
+    const emailDefault = "huongktt@gmail.com";
+    const sdtDefault = "0123456789"; 
+    let isCheck = false;
+    let textError = "";
+
+    if (email === "") {
+      textError = "Email không được để trống!";
+    } else if (sdt === "") {
+      textError = "Số điện thoại không được để trống!";
+    } else if (password === "") {
+      textError = "Mật khẩu không được để trống!";
+    } else if (email !== emailDefault) {
+      textError = "Bạn sai email rồi!";
+    } else if (email === emailDefault && sdt === sdtDefault && password !== "") {
+      isCheck = true;
+    }
+
+    if (isCheck) {
+      alert("Bạn đăng nhập thành công!");
+    } else {
+      errorText.style.display = "block";
+      errorText.innerText = textError;
+    }
+  });
+  
+</script>
 </html>
