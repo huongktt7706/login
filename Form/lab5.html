@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Kí Thành Viên</title>
+</head>
+<body>
+<div>
+    <form action="" onsubmit="return DangKi()">
+        <h2>Đăng Kí Thành Viên</h2>
+        <table>
+            <tr>
+                <td>Name</td>
+                <td><input type="text" id="name"></td>
+                <td><span id="err_name"></span></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input type="text" id="email"></td>
+                <td><span id="err_email"></span></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="password" id="password"></td>
+                <td><span id="err_pw"></span></td>
+            </tr>
+            <tr>
+                <td>Confirm Password</td>
+                <td><input type="password" id="confirmPw"></td>
+                <td><span id="err_confirmPw"></span></td>
+            </tr>
+            <tr>
+                <td>Birth</td>
+                <td><input type="date" id="birth"></td>
+                <td><span id="err_birth"></span></td>
+            </tr>
+            <tr>
+                <td>General</td>
+                <td><input type="text" id="general"></td>
+                <td><span id="err_general"></span></td>
+            </tr>
+            <tr>
+                <td>Terms</td>
+                <td><input type="checkbox" id="terms"></td>
+                <td><span id="err_terms"></span></td>
+            </tr>
+        </table>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<script>
+    function DangKi() {
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+        let confirmPw = document.getElementById("confirmPw").value;
+        let birth = document.getElementById("birth").value;
+        let general = document.getElementById("general").value;
+        let terms = document.getElementById("terms").checked;
+
+        
+
+        
+        document.getElementById('err_name').innerHTML = '';
+        document.getElementById('err_email').innerHTML = '';
+        document.getElementById('err_pw').innerHTML = '';
+        document.getElementById('err_confirmPw').innerHTML = '';
+        document.getElementById('err_birth').innerHTML = '';
+        document.getElementById('err_general').innerHTML = '';
+        document.getElementById('err_terms').innerHTML = '';
+
+        
+        if (name === '') {
+            document.getElementById('err_name').innerHTML = 'Hay Nhap Ten';
+            return false;
+            
+        } else {
+            let nameRegex = /^[a-zA-ZÀ-ỹ\s]{3,}$/;
+            if (!nameRegex.test(name)) {
+                document.getElementById('err_name').innerHTML = 'Tên phải có ít nhất 3 ký tự và không chứa ký tự đặc biệt';
+                return false;
+                
+            }
+        }
+
+        if (email === '') {
+            document.getElementById('err_email').innerHTML = 'Hay nhap email';
+            return false;
+            
+        } else {
+            let emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+(\.[a-zA-Z]{2,})+$/;
+            if (!emailRegex.test(email)) {
+                document.getElementById('err_email').innerHTML = 'Email không đúng định dạng';
+                return false;
+               
+            }
+        }
+
+        if (password === '') {
+            document.getElementById('err_pw').innerHTML = 'Hay Nhap ';
+            return false;
+            
+        } else {
+            let passRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/;
+            if (!passRegex.test(password)) {
+                document.getElementById('err_pw').innerHTML = 'Mật khẩu phải có ít nhất một chữ cái hoa, một chữ cái thường, một chữ số và một ký tự đặc biệt';
+                return false;
+                
+            }
+        }
+
+        if (confirmPw !== password) {
+            document.getElementById('err_confirmPw').innerHTML = 'Mật khẩu xác nhận không khớp';
+            return false;
+            
+        }
+
+        if (birth === '') {
+            document.getElementById('err_birth').innerHTML = 'Trường này là bắt buộc';
+            return false;
+            
+        } else if (isNaN(birth) || Number(birth) < 18) {
+            document.getElementById('err_birth').innerHTML = 'Bạn phải từ 18 tuổi trở lên';
+            return false;
+            
+        }
+
+        if (general === '') {
+            document.getElementById('err_general').innerHTML = 'Trường này là bắt buộc';
+            return false;
+            
+        }
+
+        if (!terms) {
+            document.getElementById('err_terms').innerHTML = 'Bạn phải đồng ý với các điều khoản';
+            return false;
+        }
+
+        alert('chúc mừng bạn đã đăng ký thành công');
+            return true;
+    }
+</script>
+</body>
+</html>

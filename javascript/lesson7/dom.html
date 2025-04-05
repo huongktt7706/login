@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>thao tác với cửa sổ trình duyệt</h1>
+    <button onclick="mo_cua_so()"> mở </button>
+    <button onclick="dong_cua_so()"> đóng </button>
+    <button onclick="kiem_tra()"> kiểm tra </button>
+    <script>
+        var cua_so;
+        function mo_cua_so(){
+            cua_so = window.open('https://vnexpress.net/', 'VNEXPRESS', 'toolbar = yes, menubar = no');
+        }
+        function dong_cua_so(){
+            cua_so.close();
+        }
+        function kiem_tra(){
+            if(cua_so.closed){
+                alert('cửa sổ trình duyệt đã đóng!');
+            }else{
+                alert('cửa sổ trình duyệt đang mở!');
+            }
+        }
+    </script>
+</body>
+</html>

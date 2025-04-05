@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let sv = {
+            hoten: 'Thuy Huong',
+            maSV: 'F56789',
+            email: 'huong@ftu.edu.vn',
+            tuoi: 20,
+            nghe: 'sinh viên',
+            nghenghiep: function(){
+                return this.nghe;
+
+            },
+        }
+        console.log(sv);// sv.email hiện nguyên email
+        sv.dienthoai = '0987654321';
+        delete sv.tuoi;
+
+
+        let sv1 = {
+                hoten: 'Bui Quang Minh',
+                tuoi: 24,
+                diachi: 'Thai Binh',
+                honnhan: false,
+                monhoc: [],
+                diemso: {},
+                mausac: [],
+                giangvien: {},
+                them_mon_hoc: function(ten_mon) {
+                    this.monhoc.push(ten_mon); // push là của mảng
+                },
+                them_diem_so: function(ten_mon, diem) { // đây là object(đối tượng)
+                    this.diemso[ten_mon] = diem;
+                },
+                them_mau_sac: function(ten_mau) {
+                    this.mausac.push(ten_mau);
+                },
+                them_giang_vien: function(ten_GV, mon) {
+                    this.giangvien[ten_GV] = mon;
+                }
+            };
+
+            // thêm môn
+            sv1.them_mon_hoc('HTML & CSS');
+            sv1.them_mon_hoc('JAVA Script');
+            sv1.them_mon_hoc('PHP');
+            // thêm điểm
+            sv1.them_diem_so('HTML & CSS', 10);
+            sv1.them_diem_so('JAVA Script', 9.9);
+            sv1.them_diem_so('PHP', 9.8);
+            // thêm màu
+            sv1.them_mau_sac('xanh');
+            sv1.them_mau_sac('đỏ');
+            sv1.them_mau_sac('tím');
+            sv1.them_mau_sac('vàng');
+            sv1.them_mau_sac('nâu');
+            // thêm giảng viên
+            sv1.them_giang_vien('HTMl : cô mai');
+            sv1.them_giang_vien('JAVA Script : cô thanh');
+            sv1.them_giang_vien('PHP: cô huyền diệu');
+
+            console.log('sinh viên: ');
+            console.log('họ tên sinh viên: ', sv1.hoten);
+            console.log('tuổi sinh viên: ', sv1.tuoi);
+            console.log('địa chỉ sinh viên: ', sv1.diachi);
+            console.log('môn học của sinh viên: ', sv1.monhoc);
+            console.log('điểm số của sinh viên: ', sv1.diemso);
+            console.log('màu sắc yêu thích của sinh viên: ', sv1.mausac);
+            console.log('giảng viên môn của sinh viên: ', sv1.giangvien);
+
+
+
+
+
+            
+
+    </script>
+</body>
+</html>

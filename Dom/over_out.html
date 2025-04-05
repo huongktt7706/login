@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        width: 1500px;
+        height: 1000px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+</style>
+<body>
+    <div class="container">
+    <img id="img" src="/image/anh3.jpg" alt="">
+    </div>
+</body>
+<script>
+    let imgs=document.getElementById('img');
+    imgs.addEventListener('mouseover',function(){
+        imgs.src='/image/anh2.jpg';
+    });
+    imgs.addEventListener('mouseout',function(){
+        imgs.src='/image/anh3.jpg';
+    });
+</script>
+</html>

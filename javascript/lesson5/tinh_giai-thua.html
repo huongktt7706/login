@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function giai_thua(n){
+            if((n === 0) || (n ===1))
+             return 1;
+             let ketqua = 1;
+             for(i = 2; i <= n; i++ ){
+                 ketqua *= i;
+             }
+             return ketqua;
+        }
+        console.log(giai_thua(9));
+        console.log(giai_thua(5));
+        console.log(giai_thua(7));
+        
+    </script>
+</body>
+</html>

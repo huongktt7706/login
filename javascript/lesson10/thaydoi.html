@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+</style>
+<body>
+    <button id="cuoi"> Cười lên nào! </button>
+    <button id="khoc"> Buồn quá! </button>
+    <img id= "cam_xuc"src="" alt="">
+
+    <script>
+        let imgs = document.getElementById('cam_xuc');
+        let btn_cuoi = document.getElementById('cuoi');
+        let btn_khoc = document.getElementById('khoc');
+        
+        btn_cuoi.addEventListener('click', function(){
+            imgs.src = 'img/cuoi.jpg';
+            imgs.style.display = 'block'
+        });
+        btn_khoc.addEventListener('click', function(){
+            imgs.src = 'img/khoc.jpg';
+            imgs.style.display = 'block'
+        });
+    </script>
+</body>
+</html>

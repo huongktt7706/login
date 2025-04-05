@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .slides {
+            max-width: 300px;
+            height: 300px;
+            position: relative;
+
+
+        }
+
+        .slides img {
+            width: 100%;
+            height: 100%;
+            margin: 10px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slides">
+       <img id = "slide_img" src="img/anh1.jpg" alt="ảnh" class="">
+    </div>
+    <script>
+        let slideImg = document.getElementById('slide_img');
+        let imgs = [
+            '../img/anh2.jpg',
+            '../img/anh3.jpg',
+            '../img/anh4.jpg',
+            '../img/anh5.jpg',
+        ];
+        // let i = 0;
+
+        // function start_slide() {
+        //     slideImg.src = imgs[i];
+        //     i = (i + 1) % imgs.length;// tăng i cho đến lúc i = số phần tử thì quay lạilại
+        //     setTimeout(start_slide, 1000);
+        // }
+        // start_slide();// bắt đầu slide khi tải trang
+
+        let j = 0;
+        let leng = imgs.length;
+        function slide_show(){
+            slideImg.src = imgs[j];
+            j++;
+            if(j == leng) j = 0;
+        }
+        setInterval(slide_show,1000)
+    </script>
+    <button id="prev">prev</button>
+    <button>stop</button>
+    <button>start</button>
+    <button id="next">next</button>
+
+</body>
+
+</html>

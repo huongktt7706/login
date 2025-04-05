@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+            width: 600px;
+            margin: 0 auto;
+        }
+
+        span {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="" onsubmit="return kiemtra()">
+        <h1>Đăng Ký Thành Viên</h1>
+        <table>
+            <tr>
+                <td>Họ và tên</td>
+                <td><input type="text" id="name"></td>
+                <td><span id="err_name"></span></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input type="email" id="email"></td>
+                <td><span id="err_email"></span></td>
+            </tr>
+            <tr>
+                <td>Điện thoại</td>
+                <td><input type="text" id="phone"></td>
+                <td><span id="err_phone"></span></td>
+            </tr>
+            <tr>
+                <td>Mật khẩu</td>
+                <td><input type="password" id="pw"></td>
+                <td><span id="err_pw"></span></td>
+            </tr>
+            <tr>
+                <td>Tuổi</td>
+                <td><input type="number" id="age"></td>
+                <td><span id="err_age"></span></td>
+            </tr>
+        </table>
+        <button type="submit">Đăng ký</button>
+    </form>
+    <script>
+        function kiemtra() {
+            let name = document.getElementById('name').value;
+            let email = document.getElementById('email').value;
+            let phone = document.getElementById('phone').value;
+            let pw = document.getElementById('pw').value;
+            let age = document.getElementById('age').value;
+
+            document.getElementById('err_name').innerHTML = '';
+            document.getElementById('err_email').innerHTML = '';
+            document.getElementById('err_phone').innerHTML = '';
+            document.getElementById('err_pw').innerHTML = '';
+            document.getElementById('err_age').innerHTML = '';
+
+            document.getElementById('name').style.backgroundColor = '';
+            document.getElementById('email').style.backgroundColor = '';
+            document.getElementById('phone').style.backgroundColor = '';
+            document.getElementById('pw').style.backgroundColor = '';
+            document.getElementById('age').style.backgroundColor = '';
+
+            if (name === '' || email === '' || phone === '' || pw === '' || age === '') {
+                if (name === '') {
+                    document.getElementById('err_name').innerHTML = 'phải nhập vào họ tên';
+                    document.getElementById('name').style.backgroundColor = 'yellow';
+                }
+                if (email === '') {
+                    document.getElementById('err_email').innerHTML = 'phải nhập vào email';
+                    document.getElementById('email').style.backgroundColor = 'yellow';
+                }
+                if (phone === '') {
+                    document.getElementById('err_phone').innerHTML = 'phải nhập vào số điện thoại';
+                    document.getElementById('phone').style.backgroundColor = 'yellow';
+                }
+                if (pw === '') {
+                    document.getElementById('err_pw').innerHTML = 'phải nhập mật khẩu';
+                    document.getElementById('pw').style.backgroundColor = 'yellow';
+                }
+                if (age === '') {
+                    document.getElementById('err_age').innerHTML = 'phải nhập tuổi';
+                    document.getElementById('age').style.backgroundColor = 'yellow';
+                }
+                return false;
+            }
+
+            let regexEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+(\.[a-zA-Z]{2,})+$/;
+            if (!regexEmail.test(email)) {
+                document.getElementById('err_email').innerHTML = 'phải nhập đúng định dạng email';
+                document.getElementById('email').style.backgroundColor = 'yellow';
+                return false;
+            }
+
+            let regexPhone = /^[+]?[0-9]+([-.\s]?[0-9]+)*$/;
+            if (!regexPhone.test(phone)) {
+                document.getElementById('err_phone').innerHTML = 'số điện thoại phải là số';
+                document.getElementById('phone').style.backgroundColor = 'yellow';
+                return false;
+            }
+
+            let regexPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/;
+            if (!regexPassword.test(pw)) {
+                document.getElementById('err_pw').innerHTML =
+                    'mật khẩu phải có ít nhất 8 ký tự, trong đó có ít nhất 1 chữ hoa, 1 chữ thường, 1 số và 1 ký tự đặc biệt';
+                document.getElementById('pw').style.backgroundColor = 'yellow';
+                return false;
+            }
+
+            if (isNaN(age) || age <= 0) {
+                document.getElementById('err_age').innerHTML = 'tuổi phải là 1 số dương';
+                document.getElementById('age').style.backgroundColor = 'yellow';
+                return false;
+            }
+
+            alert('chúc mừng bạn đã đăng ký thành công');
+            return true;
+        }
+    </script>
+</body>
+
+</html>

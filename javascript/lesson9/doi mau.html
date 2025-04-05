@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Slideshow</title>
+    <style>
+        body {
+            color: #efef0b;
+            font-size: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            transition: background-color 0.5s; 
+        }
+        .btn {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <p>Đổi background</p>
+    <div class="btn">
+        <button onclick="prev()" aria-label="Previous Color">Prev</button>
+        <button onclick="start()" aria-label="Start Slideshow">Start</button>
+        <button onclick="stop()" aria-label="Stop Slideshow">Stop</button>
+        <button onclick="next()" aria-label="Next Color">Next</button>
+    </div>
+
+    <script>
+        let colors = ['#0056b3', '#1fe947', '#11c7e7', '#e76e11'];
+        let i = 0;
+        let auto;
+
+        function start() {
+            stop();
+            auto = setInterval(next, 1000);
+        }
+
+        function stop() {
+            clearInterval(auto);
+        }
+
+        function prev() {
+            i--;
+            if (i < 0) i = colors.length - 1;
+            document.body.style.backgroundColor = colors[i];
+        }
+
+        function next() {
+            i++;
+            if (i >= colors.length) i = 0;
+            document.body.style.backgroundColor = colors[i]; 
+        }
+
+        
+        document.body.style.backgroundColor = colors[i];
+    </script>
+</body>
+</html>

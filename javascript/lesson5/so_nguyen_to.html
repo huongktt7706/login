@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+        var so_nguyen_to = function (n){
+           if(n < 2){
+             console.log(`${n}  không phải là số nguyên tố `);
+             return;
+           }
+           for(var i = 2; i<=Math.sqrt(n); i++){
+             if(n % 2 === 0){
+                console.log(`${n} không phải là số nguyên tố `);
+                return;
+             }
+           }console.log(`${n} là số nguyên tố`);
+        
+        }
+        so_nguyen_to(7);
+        so_nguyen_to(5);
+        so_nguyen_to(19);
+
+
+    </script>
+</body>
+</html>

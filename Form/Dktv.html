@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Kí Thành Viên</title>
+    <style>
+        form{
+            width: 600px;
+            margin: 0 auto;
+        }
+        span{
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <form action="" onsubmit="return kiemtra()">
+        <h1>Dang Ki Thanh Vien</h1>
+    <table>
+        <tr>
+           <td>Name</td>
+           <td><input type="text"></td>
+           <td><span id="err_name"></span></td>
+        </tr>
+        <tr>
+            <td>Emails</td>
+            <td><input type="text" id="name"></td>
+            <td><span id="err_email"></span></td>
+        </tr>
+        <tr>
+            <td>Age</td>
+            <td><input type="text" id="age"></td>
+            <td><span id="err_age"></span></td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input type="password" id="password"></td>
+            <td><span id="err_pw"></span></td>
+        </tr>
+        <tr>
+            <td>PhoneNumber</td>
+            <td><input type="text"id=phone></td>
+            <td><span id="err_phone"></span></td>
+        </tr>
+    </table>
+    <button type="submit">submit</button>
+    </form>
+</body>
+<script>
+    function kiemtra(){
+    let arr = document.getElementsByTagName('input');
+    let name = arr[0].value;
+    let email = arr[0].value;
+    let age = arr[0].value;
+    let password = arr[0].value;
+    let phone = arr[0].value;
+    
+
+    document.getElementById('err_name').innerHTML='';//vif innerhtml chua ca innertext
+    document.getElementById('err_email').innerHTML='';
+    document.getElementById('err_age').innerHTML=''; 
+    document.getElementById('err_pw').innerHTML='';
+    document.getElementById('err_phone').innerHTML='';
+
+    arr[0].style.backgroundColor='yellow';
+    arr[1].style.backgroundColor='yellow';
+    arr[2].style.backgroundColor='yellow';
+    arr[3].style.backgroundColor='yellow';
+    arr[4].style.backgroundColor='yellow';
+if(name===''|| email===''|| age===''|| password===''||phone===''){
+    if(!name){
+        err_name.innerHTML='Phai Nhap Ho Ten';
+        arr[0].style.backgroundColor='yellow';
+    }
+    if(!email){
+        err_email.innerHTML='Phai Nhap Email';
+        arr[1].style.backgroundColor='yellow';
+    }
+    if(!age){
+        err_age.innerHTML='Phai Nhap Tuoi';
+        arr[2].style.backgroundColor='yellow';
+    }
+    if(!pw){
+        err_pw.innerHTML='Phai Nhap Mat Khau';
+        arr[3].style.backgroundColor='yellow';
+    }
+    return false;
+    if(!phone){
+        err_phon.innerHTML='Phai Nhap SDT';
+        arr[4].style.backgroundColor='yellow';
+    }
+} 
+regexEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+(\.[a-zA-Z]{2,})+$/;
+if(!regexEmail.test(email)){
+    document.getElementById('err_email').innerHTML='Phai Nhap Dung Dinh Dang';
+    arr[1].style.backgroundColor='yellow';
+    return false
+}
+regexPhone = /^[+]?[0-9]+([-.\s]?[0-9]+)*$/;
+if(!regexPhone.test(phone)){
+    document.getElementById('err_phone').innerHTML='Phai Nhap Dung Dinh Dang';
+    arr[4].style.backgroundColor='yellow';
+    return false
+}
+regexPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/;
+if(!regexPassword.test(password)){
+    document.getElementById('err_pw').innerHTML='Phai Nhap Dung Dinh Dang';
+    arr[3].style.backgroundColor='yellow';
+    return false
+}
+if(isNaN(age)|| age<= 0){
+    document.getElementById('err_age').innerHTML='Phai Nhap Dung Dinh Dang';
+    arr[2].style.backgroundColor='yellow';
+    return false
+
+}
+alert('Welcome!');
+return false;
+}
+</script>
+</html>

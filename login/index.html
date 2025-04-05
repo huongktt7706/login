@@ -40,6 +40,7 @@
               <div class="button input-box">
                 <input type="submit" value="Sumbit" id="login-btn">
               </div>
+              <p class="text-error"></p>
               <div class="text sign-up-text">Don't have an account? <label for="flip">Sigup now</label></div>
             </div>
         </form>
@@ -99,11 +100,14 @@
 
     if (isCheck) {
       alert("Bạn đăng nhập thành công!");
+      errorText.style.display = "none"; 
     } else {
       errorText.style.display = "block";
       errorText.innerText = textError;
     }
   });
+
+  
   
 </script>
 </html>

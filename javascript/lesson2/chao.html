@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="chao.js"></script>
+</head>
+<body>
+    <script>
+
+let a = Number(prompt('nhập một số bất kì:'));
+        if(a % 2 === 0){
+            console.log(`${a} là số chẵn !`);
+        }
+        else{
+            console.log(`${a} là số lẻ !`);
+        }
+        let chieudai = Number(prompt("Nhập chiều dài:"));
+        let chieurong = Number(prompt("Nhập chiều rộng:"));
+
+        console.log({chieudai} && {chieurong}); 
+         let chuvi = (chieudai + chieurong) * 2;
+         let dientich = chieudai * chieurong;
+
+        console.log(`Chu vi hình chữ nhật: ${chuvi}`);
+        console.log(`Diện tích hình chữ nhật: ${dientich}`);
+        console.log("Vui lòng nhập số hợp lệ cho chiều dài và chiều rộng.");
+        
+        let a = Number(prompt("nhập giá trị a:"));
+        let b = Number(prompt("nhập giá trị b:"));
+        let c = Number(prompt("nhập giá trị c:"));
+
+        let delta = b^2 - 4 * a * c;
+        let x1 = (-b + Math.sqrt(delta) / (2 * a));
+        let x2 = (-b - Math.sqrt(delta) / (2 * a)); 
+
+        
+    </script>
+</body>
+</html>

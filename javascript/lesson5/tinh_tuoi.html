@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function tinh_tuoi() {
+            let nam_hien_tai = new Date().getFullYear();
+            let nam_sinh = Number(prompt('Nhập năm sinh của bạn'));
+            let tuoi = nam_hien_tai - nam_sinh;
+
+            if ((nam_sinh > 1900) && (nam_sinh < nam_hien_tai) && (!isNaN(nam_sinh))) {
+                console.log('Tuổi của bạn là: ' + tuoi);
+            } else {
+                console.log('Năm sinh không hợp lệ.');
+            }
+        }
+        tinh_tuoi();
+    </script>
+</body>
+</html>

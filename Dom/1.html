@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="smile">Smile now</button>
+    <button id="sad">so sad</button>
+    <img id="emotion" src="" alt="">
+</body>
+<script>
+    let imgs=document.getElementById('emotion');
+    let button_smile=document.getElementById('smile')
+    let button_sad=document.getElementById('sad');
+
+    button_smile.addEventListener('click',function() {
+        imgs.src='/image/anh1.jpg';
+        imgs.style.display='block';
+        
+    })
+    button_sad.addEventListener('click',function(){
+        imgs.src='/image/anh2.jpg',
+        imgs.style.display='block';
+    })
+
+
+</script>
+</html>

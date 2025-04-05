@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            width: 1000px;
+            border-collapse: collapse;
+        }
+        td,th{
+            border: 1px solid gray;
+            padding: 10px;
+        }
+        .container{
+            width: 1500px;
+            height: 900px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+    <table>
+        <tr>
+           <th>ID_Stu</th>
+           <th>Name</th>
+           <th>Email</th>
+        </tr>
+        <tr>
+            <td>F59608</td>
+            <td>Khuong Thi Thuy Huong</td>
+            <td>thuyhuong7706nb@gmail.com</td>
+        </tr>
+        <tr>
+            <td>F59609</td>
+            <td>minh</td>
+            <td>minhbui@gmail.com</td>
+        </tr>
+        <tr>
+            <td>F59610</td>
+            <td>Hung</td>
+            <td>hungkv@gmail.com</td>
+        </tr>
+
+
+
+    </table>
+    <button onclick="change_color()">Change color</button>
+    </div>
+    
+</body>
+<script>
+    function change_color(){
+        let cells=document.getElementsByTagName('td');
+        for (let i=0;i<cells.length;i++){
+            cells[i].style.backgroundColor='yellow'
+        }
+        let table=document.getElementsByTagName('table')[0];
+        let row=table.rows[2];
+        row.style.backgroundColor='blue';
+    }
+</script>
+</html>

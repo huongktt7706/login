@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table {
+           width : 500px;
+           border-collapse: collapse;
+    }
+    td, th {
+          border : 1px solid black;
+          padding: 10px;
+    }
+</style>
+<body>
+    <table>
+        <tr>
+            <th>mã SV</th>
+            <th>Họ tên</th>
+            <th>Email</th>
+        </tr>
+        <tr>
+            <td>PH0001</td>
+            <td> Chí phèo </td>
+            <td> pheo@gmail.com</td>
+
+        </tr>
+        <tr>
+            <td>PH0002</td>
+            <td> Thị nở </td>
+            <td> thino@gmail.com</td>
+
+        </tr>
+        <tr>
+            <td>PH0003</td>
+            <td> Bá kiến </td>
+            <td> bakien@gmail.com</td>
+
+        </tr>
+    </table>
+    <button onclick="doi_mau()"> Đổi màu </button>
+
+    <script>
+        // DOM 1 trang web cấu thành từ 3 thành phần : + thẻ
+        //                                             + thuộc tính (atribute): id , class....
+        //                                             + text
+
+        function doi_mau() {
+        //     function doi_mau(){
+        //     let cells = document.getElementsByTagName('td');
+        //     for (let i = 0 ; i < cells.length; i++){
+        //         if(i % 2 == 0){
+        //         cells[i].style.backgroundColor = 'yellow'
+
+        //         }else{
+        //         cells[i].style.backgroundColor = 'white'
+        //         }
+        //     }
+        // }
+            // let rows = document.getElementsByTagName('tr');
+            // for (let i = 1; i < rows.length; i++) { 
+            //     if (i % 2 === 0) {
+            //         rows[i].style.backgroundColor = 'yellow';
+            //     } else {
+            //         rows[i].style.backgroundColor = 'white';
+            //     }
+            // }
+            let table = document.getElementsByTagName('table')[0];
+            let row = table.rows[2];
+            row.style.backgroundColor = 'yellow';
+        }
+    </script>
+
+</body>
+</html>

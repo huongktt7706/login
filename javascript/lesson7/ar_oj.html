@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var laptop = {
+            ten: 'abc',
+            hang: 'dell',
+            mau_sac: 'trắng',
+             noi_sx:{
+                quocgia: 'mỹ',
+                chau_luc: 'châu mỹ'
+            },
+        }
+
+        console.log(laptop);
+        laptop.gia = 12000000
+        delete laptop.noi_sx.chau_luc;
+
+
+        var ar =['táo', 'ổi', 'cóc', 'xoài'];
+        console.log(ar);
+        ar.push('mít');// chèn phân tử vào cuối mảng
+        console.log(ar.length);
+        ar.pop();// xóa phân tử cuối mảng
+        ar.unshift('lê');// chèn phần tử vào đầu mảng
+        ar.shift()// xóa phần tử đầu mảng
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    nhập tên: <input type='text' id="ten"> <button onclick="say()">let's say</button>
+    <div id="say1"></div>
+    <script>
+        function say() {
+            let ten = document.getElementById('ten').value;
+            let sayhi = `xin chào ${ten}`;
+            document.write(sayhi);
+        }
+
+
+        function say1(){
+            let ten = document.getElementById('ten').value;
+            let say = (`xin chào ${ten}`);
+            document.getElementById('say1').innerHTML = say;
+        }
+        
+    </script>
+</body>
+</html>
